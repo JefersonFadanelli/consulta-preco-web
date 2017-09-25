@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+
+<div *ngIf="!finalizou">
+  <div>
+    <p> Qual é o seu <strong>{{campoExibicao}}</strong>? </p>
+    <input autofocus type="text" [(ngModel)]="input" (keyup.enter)="setInputValue(input)" (blur)="setInputValue(input)">
+  </div>
+
+  <br>
+
+  <div>
+    Enter para prosseguir
+  </div>
+</div>
+
+<div *ngIf="finalizou">
+  <p>Obrigado pelo cadastro <strong> {{cadastroPessoa.nome}} </strong> </p>
+  <p>Agora basta utilizar o seu CPF para importar os seus dados cadastrais :)</p>
+</div>
