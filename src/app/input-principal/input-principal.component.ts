@@ -17,17 +17,17 @@ export class InputPrincipalComponent implements OnInit {
   ngOnInit() {  }
 
   setInputValue(input: string) {
-    if( this.cadastroPessoa.getCampoAtual() == "Nome"){
-      this.cadastroPessoa.setNome( input );
-    }
+    //if( this.cadastroPessoa.getCampoAtual() == "Nome"){
+//      this.cadastroPessoa.setNome( input );
+    //}
 
-    if( this.cadastroPessoa.getCampoAtual() == "Endereço"){
-      this.cadastroPessoa.setEndereco( input );
-    }
+    //if( this.cadastroPessoa.getCampoAtual() == "Endereço"){
+//      this.cadastroPessoa.setEndereco( input );
+//    }
 
-    if( this.cadastroPessoa.getCampoAtual() == "Email"){
-      this.cadastroPessoa.setEmail( input );
-    }
+  //  if( this.cadastroPessoa.getCampoAtual() == "Email"){
+      //this.cadastroPessoa.setEmail( input );
+    //}
   }
 
 }

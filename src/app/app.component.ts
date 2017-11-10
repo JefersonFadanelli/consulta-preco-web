@@ -1,59 +1,28 @@
 import { Component } from '@angular/core';
 
-import { CadastroPessoa } from './classes/cadastro-pessoa';
+import { ProdutoService } from './classes/produto.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [CadastroPessoa]
+  providers: [ProdutoService]
 })
+
 export class AppComponent {
-  finalizou: boolean;
-  indice: number = 0;
-  campos: string[] = ['Nome', 'CPF', 'Email', 'Endereço', 'Senha'];
-  campoExibicao: string;
+
+  produtos = [];
+
   input: string = "";
 
-  constructor(private cadastroPessoa: CadastroPessoa ){ }
+  constructor( private produtoService: ProdutoService ){ }
 
   ngOnInit( ) {
-    this.campoExibicao = this.campos[0];
-    this.cadastroPessoa.setCampoAtual( this.campoExibicao );
+
   }
 
-  onProximo() {
-    this.indice++;
-
-    if( this.indice == this.campos.length ){
-        this.onFinalizar();
-    }
-
-    this.campoExibicao = this.campos[this.indice];
-    this.cadastroPessoa.setCampoAtual( this.campoExibicao );
-    this.input = "";
+  pesquisa(){
+    this.produtoService.listar( this.input ).subscribe( produtos => { this.produtos = produtos } );
   }
-
-  onFinalizar() {
-    console.log( this.cadastroPessoa );
-    this.finalizou = true;
-  }
-
-  setInputValue(input: string) {
-    if( this.cadastroPessoa.getCampoAtual() == "Nome"){
-      this.cadastroPessoa.setNome( input );
-    }
-
-    if( this.cadastroPessoa.getCampoAtual() == "Endereço"){
-      this.cadastroPessoa.setEndereco( input );
-    }
-
-    if( this.cadastroPessoa.getCampoAtual() == "Email"){
-      this.cadastroPessoa.setEmail( input );
-    }
-
-    this.onProximo();
-  }
-
 
 }
