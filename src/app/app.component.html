@@ -7,13 +7,11 @@
 
 <br>
 
-<ul class="lista">
-  <p *ngIf="produtos != null && produtos.length > 0">
-      <li *ngFor="let produto of produtos">
-          {{ produto.descricaoProduto  }} R$ {{ produto.preco }}
-      </li>
-  </p>
-</ul>
+<div *ngIf="produtos != null && produtos.length > 0" class="list-group">
+  <div *ngFor="let produto of produtos">
+    <a href="#" class="list-group-item list-group-item-action">{{ produto.descricaoProduto }} </a>
+  </div>
+</div>
 
 <div *ngIf="produtos != null && produtos.length < 1" class="alert alert-info" role="alert">
   Nenhum produto encontrado
