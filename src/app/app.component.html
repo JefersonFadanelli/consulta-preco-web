@@ -1,18 +1,8 @@
-<br><br>
 
+<div class="form-group centralizado">
+  <input autofocus type="text" class="form-control pesquisa" [(ngModel)]="input" placeholder="Produto ou Código de barras">
 
-<div>
-  <input autofocus 
-         type="text"
-         [(ngModel)]="input"
-         
-         class="pesquisa"
-  >
-<br>
-<br>
-  <button (click)="pesquisa()">
-    Buscar
-  </button>
+  <button type="button" class="btn btn-primary btn-lg botao" (click)="pesquisa()">Buscar Menor Preço</button>
 </div>
 
 <br>
@@ -22,11 +12,9 @@
       <li *ngFor="let produto of produtos">
           {{ produto.descricaoProduto  }} R$ {{ produto.preco }}
       </li>
-    </p>
-
-  <p *ngIf="produtos != null && produtos.length < 1">
-      <li>
-          Nenhum produto encontrado
-      </li>
-    </p>
+  </p>
 </ul>
+
+<div *ngIf="produtos != null && produtos.length < 1" class="alert alert-info" role="alert">
+  Nenhum produto encontrado
+</div>

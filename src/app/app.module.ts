@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { BotaoPrincipalComponent } from './botao-principal/botao-principal.component';
 import { InputPrincipalComponent } from './input-principal/input-principal.component';

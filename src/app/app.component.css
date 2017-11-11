@@ -3,9 +3,20 @@ div {
 }
 
 .pesquisa {
-  width: 95%;
+  width: 80%;
+  text-align: center;
 }
 
 .lista{
   list-style-type: none;
+}
+
+.botao{
+  margin-top: 5%;
+  margin-left: -15%;
+}
+
+.centralizado{
+  margin-top: 10%;
+  margin-left: 18%;
 }
